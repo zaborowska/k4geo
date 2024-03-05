@@ -293,6 +293,9 @@ createCaloDiscs(dd4hep::Detector& aLcdd, dd4hep::xml::Handle_t aXmlElement, dd4h
   dd4hep::Volume envelopePositiveVol(nameDet + "_positive_vol", envelopePositive, aLcdd.material("Air"));
   dd4hep::Volume envelopeNegativeVol(nameDet + "_negative_vol", envelopeNegative, aLcdd.material("Air"));
 
+  // Set region, limitset, and visibility of layer
+  envelopeVol.setAttributes(aLcdd, xmlDetElem.regionStr(), xmlDetElem.limitsStr(), xmlDetElem.visStr());
+
   dd4hep::DetElement caloPositiveDetElem(caloDetElem, "positive", 0);
   dd4hep::DetElement caloNegativeDetElem(caloDetElem, "negative", 0);
 

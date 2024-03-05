@@ -28,7 +28,9 @@ static dd4hep::detail::Ref_t createECalBarrelInclined(dd4hep::Detector& aLcdd,
   // Create air envelope for the whole barrel
   dd4hep::Volume envelopeVol(nameDet + "_vol", dd4hep::Tube(dim.rmin(), dim.rmax(), dim.dz()),
                                        aLcdd.material("Air"));
-  envelopeVol.setVisAttributes(aLcdd, dim.visStr());
+  // Set region, limitset, and visibility of layer
+  envelopeVol.setAttributes(aLcdd, xmlDetElem.regionStr(), xmlDetElem.limitsStr(), xmlDetElem.visStr());
+  lLog << MSG::INFO << "Region: " << xmlDetElem.regionStr() << endmsg;
 
   // Retrieve cryostat data
   dd4hep::xml::DetElement cryostat = aXmlElement.child(_Unicode(cryostat));

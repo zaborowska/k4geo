@@ -22,9 +22,12 @@
 	<vis name="HiddenEnvelope"    alpha="0.0" r="1.0"  g="1.0"  b="1.0"  showDaughters="true"  visible="false"/>
 	<vis name="CompositeVis"      alpha="1.0" r="1.0"  g="0.0"  b="0.0"  showDaughters="true"  visible="true"/>
     </display>
+    <regions>
+      <region name="ECalBarrelRegion"/>
+    </regions>
 
     <detectors>
-        <detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="ECALVis" gap="0.*cm">
+        <detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="ECALVis" gap="0.*cm" region="ECalBarrelRegion">
 
             <comment>EM Calorimeter Barrel</comment>
 
