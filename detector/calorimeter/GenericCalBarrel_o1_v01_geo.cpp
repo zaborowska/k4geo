@@ -211,8 +211,9 @@ static Ref_t create_detector(Detector& theDetector, xml_h e, SensitiveDetector s
                 // Set region, limitset, and vis.
                 slice_vol.setAttributes(theDetector, x_slice.regionStr(), x_slice.limitsStr(), x_slice.visStr());
                 // slice PlacedVolume
-                layer_vol.placeVolume(slice_vol, Position(0, 0, slice_pos_z));
-                
+                PlacedVolume slice_phv = layer_vol.placeVolume(slice_vol, Position(0, 0, slice_pos_z));
+                slice_phv.addPhysVolID("submodule", slice_number);
+
                 // Increment Z position for next slice.
                 slice_pos_z += slice_thickness / 2;
                 // Increment slice number.
