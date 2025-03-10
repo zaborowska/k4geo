@@ -91,6 +91,9 @@
       <segmentation type="FCCSWGridModuleThetaMerged_k4geo" nModules="ECalBarrelNumPlanes" mergedCells_Theta="4 1 4 4 4 4 4 4 4 4 4" mergedModules="2 2 2 2 2 2 2 2 2 2 2" grid_size_theta="0.009817477/4" offset_theta="0.5902785"/>
         <id>system:4,cryo:1,type:3,subtype:3,layer:8,module:11,theta:10</id>
     </readout>
+    <regions>
+      <region name="ECalBarrelRegion"/>
+    </regions>
 
     <!-- example of adding a second readout for the reconstruction, to compare the two -->
     <readout name="ECalBarrelModuleThetaMerged2">
@@ -100,7 +103,7 @@
   </readouts>
 
   <detectors>
-    <detector id="BarECal_id" name="ECalBarrel" type="ECalBarrel_NobleLiquid_InclinedTrapezoids_o1_v04" readout="ECalBarrelModuleThetaMerged">
+    <detector id="BarECal_id" name="ECalBarrel" type="ECalBarrel_NobleLiquid_InclinedTrapezoids_o1_v04" readout="ECalBarrelModuleThetaMerged" region="ECalBarrelRegion">
       <type_flags type=" DetType_CALORIMETER + DetType_ELECTROMAGNETIC + DetType_BARREL"/>
       <sensitive type="SimpleCalorimeterSD"/>
       <dimensions rmin="BarCryoECal_rmin" rmax="BarCryoECal_rmax" dz="BarCryoECal_dz" vis="ecal_envelope"/>

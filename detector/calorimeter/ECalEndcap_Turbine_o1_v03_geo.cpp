@@ -754,7 +754,8 @@ namespace det {
       dd4hep::Tube endcapShape( dim.rmin1(), dim.rmax1(), dim.dz());
 
       dd4hep::Volume envelopeVol(nameDet + "_vol", endcapShape, aLcdd.material("Air"));
-  
+      // Set region, limitset, and visibility of layer
+      envelopeVol.setAttributes(aLcdd, xmlDetElem.regionStr(), xmlDetElem.limitsStr(), xmlDetElem.visStr());
 
       dd4hep::printout(dd4hep::DEBUG, "ECalEndcap_Turbine_o1_v03",  "Placing detector on the positive side: (cm) %f  with min, max radii %f %f",dim.z_offset(), dim.rmin1(), dim.rmax1() );
 
