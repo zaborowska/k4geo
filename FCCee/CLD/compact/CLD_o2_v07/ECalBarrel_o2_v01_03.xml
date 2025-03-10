@@ -11,6 +11,9 @@
             <id>system:5,side:2,module:8,stave:4,layer:9,submodule:4,x:32:-16,y:-16</id>
         </readout>
     </readouts>
+    <regions>
+      <region name="ECalBarrelRegion"/>
+    </regions>
 
     <!--  Definitions of visualization attributes  -->
     <display>
@@ -24,7 +27,7 @@
     </display>
 
     <detectors>
-        <detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="ECALVis" gap="0.*cm">
+        <detector name="ECalBarrel" type="GenericCalBarrel_o1_v01" id="DetID_ECal_Barrel" readout="ECalBarrelCollection" vis="ECALVis" gap="0.*cm"  region="ECalBarrelRegion">
 
             <comment>EM Calorimeter Barrel</comment>
 
